@@ -1,0 +1,8 @@
+#!/bin/bash
+fusermount -u amongus
+mkdir build 2>&1 | grep -v "File exists"
+cd build && cmake .. > /dev/null && make
+cd ..
+mkdir amongus 2>&1 | grep -v "File exists" || true
+truncate --size=0 err.txt || true
+build/fuse-example amongus -f --src joe_biden

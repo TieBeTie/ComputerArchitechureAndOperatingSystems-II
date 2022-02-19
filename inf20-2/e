@@ -1,0 +1,3 @@
+#!/bin/bash
+gcc -fsanitize=address -Wall -O2 -std=gnu11 -lm main.c -lpthread -o main.exe
+./main.exe
